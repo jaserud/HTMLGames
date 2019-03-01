@@ -16,17 +16,21 @@
 <script>
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
-	var ballRadius = 10;
+	var ballRadius = 5;
 	var x = canvas.width/2;
-	var y = canvas.height-30;
+	var y = canvas.height/2;
 	var dx = 2;
 	var dy = -2;
 	var paddleHeight = 75;
 	var paddleWidth = 10;
-	var paddleY = (canvas.height-paddleWidth)/2;
+	var paddleY = (canvas.height-paddleHeight)/2;
 	var upPressed = false;
 	var downPressed = false;
-
+	var aiPaddleY = (canvas.height-paddleHeight)/2;
+	var userScore = 0;
+	var aiScore = 0;
+	
+	
 	document.addEventListener("keydown", keyDownHandler, false);
 	document.addEventListener("keyup", keyUpHandler, false);
 
