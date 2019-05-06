@@ -1,0 +1,10 @@
+canvas { 
+    background: rgba(238, 238, 238, 0.705); 
+    display: block; 
+    margin: 0 auto; 
+    border: solid black;
+    border-width: medium thin;
+}
+body{    
+  text-align: center;
+}

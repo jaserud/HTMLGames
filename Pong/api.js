@@ -27,7 +27,7 @@
 	function drawPaddle() {
 		ctx.beginPath();
 		ctx.rect(0, paddleY , paddleWidth, paddleHeight);
-		ctx.fillStyle = "#0095DD";
+		ctx.fillStyle = "#800000";
 		ctx.fill();
 		ctx.closePath();
 	}
@@ -35,7 +35,7 @@
 	function drawAIPaddle() {
 		ctx.beginPath();
 		ctx.rect(canvas.width-paddleWidth , aiPaddleY , paddleWidth, paddleHeight);
-		ctx.fillStyle = "#0095DD";
+		ctx.fillStyle = "#800000";
 		ctx.fill();
 		ctx.closePath();
 	
@@ -43,7 +43,7 @@
 	
 	function drawScores(){
 		ctx.font = "16px Arial";
-		ctx.fillStyle = "#0095DD";
+		ctx.fillStyle = "#000000";
 		ctx.fillText("User Score: " + userScore, 8, 20);
 		ctx.fillText("AI Score: " + aiScore, 120, 20);
 	}
@@ -103,9 +103,9 @@
 		}
 		
 		if(dy < 0 && dx > 0 && aiPaddleY > 0) {
-			aiPaddleY -= 3;
+			aiPaddleY -= 2;
 		} else if (dy > 0 && dx > 0 && aiPaddleY < canvas.height-paddleHeight){
-			aiPaddleY += 3;
+			aiPaddleY += 2;
 		}
 		
 		if(upPressed && paddleY > 0) {

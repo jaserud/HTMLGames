@@ -1,0 +1,44 @@
+<head>
+	<title>Life!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <!-- <script src="angular.min.js"></script> -->
+    <script src="gameOLife.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<div class="view">
+    <h1>Game of Life</h1>
+    <h5>(Made with AngularJS 1.7)</h5>
+
+    <div class="info">
+        <p>
+            This is a zero player game with the following rules: <br>
+            - Any live cell (colored) with less than 2 live neighbours dies <br>
+            - Any live cell (colored) with 2 or 3 live neighbours continues to be live <br>
+            - Any live cell (colored) with more than 3 live neighbours dies (un-colored) <br>
+            - Any dead cell (un-colored) with three live neighbours becomes a live cell <br>
+        </p>
+    </div>
+
+    <div ng-app="gameOLife" style="margin-left: 50px;">
+        <div>Choose one to see examples: <br>
+            (Customizable grid comming soon...)
+        </div>
+        <br>
+
+        <button ng-click="set(0)">Blinker</button>
+        <button ng-click="set(1)">Beacon</button>
+        <button ng-click="set(2)">Toad</button>
+
+        <br><br>
+        <table>
+            <tr ng-repeat="x in tiles track by $index">
+                <td ng-repeat="y in x  track by $index">
+                    <div class="gridOn" ng-if="y==1"></div>
+                    <div class="gridOff" ng-if="y==0"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

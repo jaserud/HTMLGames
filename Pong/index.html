@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Pong!</title>
+	<script src="api.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>This is a game of pong. First one to 3 points wins!	</h1>
+
+	<canvas id="myCanvas" width="480" height="320"></canvas>
+
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		var ballRadius = 5;
+		var x = canvas.width/2;
+		var y = canvas.height/2;
+		var dx = 2;
+		var dy = -2;
+		var paddleHeight = 75;
+		var paddleWidth = 10;
+		var paddleY = (canvas.height-paddleHeight)/2;
+		var upPressed = false;
+		var downPressed = false;
+		var aiPaddleY = (canvas.height-paddleHeight)/2;
+		var userScore = 0;
+		var aiScore = 0;
+		
+		
+		document.addEventListener("keydown", keyDownHandler, false);
+		document.addEventListener("keyup", keyUpHandler, false);
+
+		draw();
+	</script>
+
+</body>
