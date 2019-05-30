@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pong!</title>
 	<script src="api.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1>This is a game of pong. First one to 3 points wins!	</h1>
+	<h2>This is a game of pong.</h2>
+	<h2>First one to 3 points wins!	</h2>
 
 	<canvas id="myCanvas" width="480" height="320"></canvas>
 
@@ -25,7 +27,7 @@
 		var aiPaddleY = (canvas.height-paddleHeight)/2;
 		var userScore = 0;
 		var aiScore = 0;
-		
+		var max = 3;
 		
 		document.addEventListener("keydown", keyDownHandler, false);
 		document.addEventListener("keyup", keyUpHandler, false);

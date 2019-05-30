@@ -1,5 +1,8 @@
 
-	function keyDownHandler(e) {
+	function keyDownHandler(e) {		
+		if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+			e.preventDefault();
+		}
 		if(e.key == "Up" || e.key == "ArrowUp") {
 			upPressed = true;
 		}
@@ -47,6 +50,14 @@
 		ctx.fillText("User Score: " + userScore, 8, 20);
 		ctx.fillText("AI Score: " + aiScore, 120, 20);
 	}
+
+	function drawWinner(player){
+		ctx.font = "bold 20px Arial";
+		ctx.fillStyle = "#000000";
+		ctx.fillText("Winner is: " + player, 180, 120);
+		ctx.textAlign = 'center';
+
+	}
 	
 	function reset(){
 		x = canvas.width/2;
@@ -75,12 +86,11 @@
 				dx = -dx;
 			} else {
 				userScore = userScore + 1;
-				if (userScore < 3) {
+				if (userScore < max) {
 					reset();
 				} else {
-					alert("You win");
-					document.location.reload();
-					clearInterval(interval); // Needed for Chrome to end game
+					drawWinner("You");
+					clearInterval(interval); 
 				}
 			}
 		}
@@ -92,12 +102,11 @@
 				dx = -dx;
 			} else {	
 				aiScore = aiScore + 1;
-				if (aiScore < 3) {
+				if (aiScore < max) {
 					reset();
-				} else {
-					alert("AI wins");
-					document.location.reload();
-					clearInterval(interval); // Needed for Chrome to end game
+				} else {					
+					drawWinner("AI");
+					clearInterval(interval); 					
 				}
 			}
 		}
